@@ -2,15 +2,21 @@ const click = document.querySelector("#click");
 console.log(click);
 
 function handleTitleClick() {
-  click.style.color = "blue";
+  //   activeClassName = "active";
+  //   if (this.classList.contains(activeClassName)) {
+  //     this.classList.remove(activeClassName);
+  //   } else {
+  //     this.classList.add(activeClassName);
+  //   }
+  this.classList.toggle("active");
 }
 
 function handleMouseEnteer() {
-  click.innerText = "Mouse is here!";
+  this.innerText = "Mouse is here!";
 }
 
 function handleMouseLeave() {
-  click.innerText = "Mouse is gone!";
+  this.innerText = "Mouse is gone!";
 }
 
 function handleWindowResize() {
