@@ -1,27 +1,43 @@
-const a = 5;
-let b = 5;
+const click = document.querySelector("#click");
+console.log(click);
 
-console.log(a + b);
-console.log(a * b);
-console.log(a / b);
+function handleTitleClick() {
+  click.style.color = "blue";
+}
 
-const dayOfWeek = ["mon", "tue", "wed", "tue", "fri", "sat"];
+function handleMouseEnteer() {
+  click.innerText = "Mouse is here!";
+}
 
-dayOfWeek.push("sun");
+function handleMouseLeave() {
+  click.innerText = "Mouse is gone!";
+}
 
-console.log(dayOfWeek[dayOfWeek.length - 1]);
+function handleWindowResize() {
+  document.body.style.backgroundColor = "tomato";
+}
 
-const player = {
-  name: "ging",
-  points: 10,
-  fat: false,
-  hello: (oterPersionName) => {
-    console.log("hello " + oterPersionName + "!, my name is " + player.name);
-  },
-};
+function handleWindowCopy() {
+  alert("copier!");
+}
 
-console.log(player.name);
-player.cute = true;
-console.log(player);
+function handleWindowOffline() {
+  alert("SOS no wifi!!");
+}
 
-player.hello("ning");
+function handleWindowOnline() {
+  alert("All Good!");
+}
+
+// click.onclick = handleTitleClick;
+// click.onmouseenter = handleMouseEnteer;
+// click.onmouseleave = handleMouseLeave;
+
+click.addEventListener("click", handleTitleClick);
+click.addEventListener("mouseenter", handleMouseEnteer);
+click.addEventListener("mouseleave", handleMouseLeave);
+
+window.addEventListener("resize", handleWindowResize);
+window.addEventListener("copy", handleWindowCopy);
+window.addEventListener("offline", handleWindowOffline);
+window.addEventListener("online", handleWindowOnline);
